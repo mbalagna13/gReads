@@ -10,5 +10,11 @@ router.get('/books', (req, res) => {
   });
 });
 
+router.post('/books/createBooks', (req, res, next) =>{
+  queries.createBooks(req.body).then(result => {
+    console.log(req.body);
+    res.json(result)
+  })
+})
 
 module.exports = router;
