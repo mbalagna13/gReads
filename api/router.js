@@ -18,9 +18,9 @@ router.post('/books/createBooks', (req, res, next) =>{
 })
 
 router.get('/books/:id', (req, res, next) => {
-  queries.getBookById().then(books => {
+  queries.getBookById(req.params.id).then(books => {
     console.log(req.body);
-    res.json(result);
+    res.json(books);
   })
 })
 
