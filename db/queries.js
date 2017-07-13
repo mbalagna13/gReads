@@ -6,5 +6,8 @@ module.exports= {
   },
   createBooks(books) {
     return knex('books').insert(books).returning('*')
+  },
+  getBookById(id) {
+    return knex('books').where('id', id)
   }
 }
