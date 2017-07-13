@@ -24,4 +24,10 @@ router.get('/books/:id', (req, res, next) => {
   })
 })
 
+router.put('/books/:id', (req, res, next) => {
+  queries.updateBook(req.params.id, req.body).then(books => {
+    res.json(books[0])
+  })
+})
+
 module.exports = router;

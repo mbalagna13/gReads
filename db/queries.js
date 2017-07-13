@@ -9,5 +9,8 @@ module.exports= {
   },
   getBookById(id) {
     return knex('books').where('id', id)
+  },
+  updateBook(id, book){
+    return knex('books').where('id', id).update(book, '*')
   }
 }
